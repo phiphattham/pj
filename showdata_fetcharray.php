@@ -10,15 +10,15 @@ $result = mysqli_query($con,$sql);
 
 // 4 คำสั่งในการดึงข้อมูลรูปแบบ array
 $row = mysqli_fetch_array($result,MYSQLI_BOTH);
+var_dump($row);
+// echo "รหัสพนักงาน = ".$row["emp_id"]."<br>";
+// echo "ชื่อ = ".$row[1]."<br>";
+// echo "สกุล = ".$row[2]."<br>";
+// echo "เพศ = ".$row["emp_gender"]."<br>";
+// echo "ทักษะ = ".$row["emp_skills"]."<br>";
+// echo "<hr>";
 
-echo "รหัสพนักงาน = ".$row["emp_id"]."<br>";
-echo "ชื่อ = ".$row[1]."<br>";
-echo "สกุล = ".$row[2]."<br>";
-echo "เพศ = ".$row["emp_gender"]."<br>";
-echo "ทักษะ = ".$row["emp_skills"]."<br>";
-echo "<hr>";
-
-// test
+// // test
 
 
 ?>

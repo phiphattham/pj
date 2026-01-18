@@ -10,6 +10,7 @@ $result = mysqli_query($con,$sql);
 // 4 คำสั่งในการดึงข้อมูลรูปแบบ object
 $row = mysqli_fetch_object($result);
 
+// ทำการแสดงผล
 echo "รหัสพนักงาน = ".$row->emp_id."<br>";
 echo "ชื่อ = ".$row->emp_fname."<br>";
 echo "สกุล = ".$row->emp_lname."<br>";

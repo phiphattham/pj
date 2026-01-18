@@ -17,6 +17,7 @@ echo "สกุล = ".$row->emp_lname."<br>";
 echo "เพศ = ".$row->emp_gender."<br>";
 echo "ทักษะ = ".$row->emp_skills."<br>";
 echo "<hr>";
+// เครื่องก็จะทำการเปลี่ยนจากเดิมที่เป็นในรูปแบบ [] ก็มาเป็น ->
 
 
 ?>

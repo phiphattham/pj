@@ -18,5 +18,7 @@ echo "เพศ = ".$row["emp_gender"]."<br>";
 echo "ทักษะ = ".$row["emp_skills"]."<br>";
 echo "<hr>";
 
+// test
+
 
 ?>

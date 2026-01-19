@@ -23,10 +23,12 @@ $result = mysqli_query($con, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">   
 </head>
 <body>
-    <!-- 9 เพื่อหัวข้อ -->
+    
+    <div class="container">
+        <!-- 9 เพื่อหัวข้อ -->
     <h1 class="text-center">ข้อมูลพนักงานในฐานข้อมูล</h1>
     <!-- 1 สร้างตารางหรือ table ให้พอเป็นโครง -->
-    <table border="2"> <!-- 5 ใส่เส้นขอบให้กับตัวตารางเลย -->
+    <table class="table table-bordered"> <!-- 5 ใส่เส้นขอบให้กับตัวตารางเลย -->
         <!-- 2 ต่อมาทำการสร้างส่วนหัวตาราง -->
         <thead>
             <!-- 3 สร้างเป็นรูปแบบแถว -->
@@ -54,7 +56,8 @@ $result = mysqli_query($con, $sql);
         <?php } ?>
         </tbody>
     </table>
-    <a href="insertForm.php">บันทึกข้อมูล</a>
+    <a href="insertForm.php" class="btn btn-success">บันทึกข้อมูล</a>
+    </div>
 
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->

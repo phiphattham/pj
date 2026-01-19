@@ -23,4 +23,7 @@ for($i=0; $i<$count; $i++){
     echo "ทักษะ = ".$row["emp_skills"]."<br>";
     echo "<hr>";    
 }
+
+// 2
+
 ?>

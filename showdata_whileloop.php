@@ -17,4 +17,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "ทักษะ = " . $row["emp_skills"] . "<br>";
     echo "<hr>";
 }
+
+// 3
 ?>

@@ -27,8 +27,19 @@ $result = mysqli_query($con, $sql);
     <div class="container">
         <!-- 9 เพื่อหัวข้อ -->
     <h1 class="text-center">ข้อมูลพนักงานในฐานข้อมูล</h1>
+    <!-- 27/1 สร้างเส้นคั่น -->
+    <hr>
+    <!-- 27/2 สร้างฟอร์ม -->
+    <form action="deleteTextField.php" class="form-group" method="POST">
+        <!-- 27/3 จะให้ป้อนรหัสพนักงานเพื่อทำการลบ -->
+        <label for="">รหัสพนักงาน</label>
+        <!-- 27/4 ทำการระบุ input เพื่อให้สามารถกรอกข้อมูลที่เราต้องการลบ -->
+        <input type="text" placeholder="ป้อนรหัสพนักงานเพื่อลบ" name="emp_id" class="form-control">
+        <!-- 24/5 ทำการสร้างปุ่มเพื่อทำการกดลบข้อมูล -->
+        <input type="submit" value="ลบข้อมูล" class="btn btn-danger my-2">    
+    </form>
     <!-- 1 สร้างตารางหรือ table ให้พอเป็นโครง -->
-    <table class="table table-bordered"> <!-- 5 ใส่เส้นขอบให้กับตัวตารางเลย -->
+    <table class="table table-bordered mt-2"> <!-- 5 ใส่เส้นขอบให้กับตัวตารางเลย -->
         <!-- 2 ต่อมาทำการสร้างส่วนหัวตาราง -->
         <thead>
             <!-- 3 สร้างเป็นรูปแบบแถว -->

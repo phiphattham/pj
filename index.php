@@ -50,6 +50,7 @@ $result = mysqli_query($con, $sql);
                  <th>นามสกุล</th>
                  <th>เพศ</th>
                  <th>ทักษะความสามาร</th>
+                 <th>ลบข้อมูล</th>  <!-- 27/10 เพิ่มหัวข้อ-->
              </tr>
         </thead>
         <!-- 6 เนื้อหาที่อยู่ในตาราง -->
@@ -63,6 +64,10 @@ $result = mysqli_query($con, $sql);
                 <td> <?php echo $row["emp_lname"] ;?> </td>
                 <td> <?php echo $row["emp_gender"] ;?> </td>
                 <td> <?php echo $row["emp_skills"] ;?> </td>
+                <td>
+                    <!-- 27/11 สร้างปุ่ม -->
+                    <a href="deleteQueryString.php?emp_id=<?php echo $row["emp_id"]?>" class="btn btn-danger">ลบข้อมูล</a> <!-- 27/11 ตัวลบข้อมูล-->
+                </td>
             </tr>
         <?php } ?>
         </tbody>

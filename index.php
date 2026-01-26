@@ -66,7 +66,9 @@ $result = mysqli_query($con, $sql);
                 <td> <?php echo $row["emp_skills"] ;?> </td>
                 <td>
                     <!-- 27/11 สร้างปุ่ม -->
-                    <a href="deleteQueryString.php?emp_id=<?php echo $row["emp_id"]?>" class="btn btn-danger">ลบข้อมูล</a> <!-- 27/11 ตัวลบข้อมูล-->
+                    <a href="deleteQueryString.php?emp_id=<?php echo $row["emp_id"]?>" class="btn btn-danger"
+                    onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่')"
+                    >ลบข้อมูล</a> <!-- 27/11 ตัวลบข้อมูล-->
                 </td>
             </tr>
         <?php } ?>

@@ -9,6 +9,8 @@ $sql = "SELECT * FROM employees";
 //  คำสั่งรัน sql
 $result = mysqli_query($con, $sql); 
 
+// ทำการสร้างตัวแปรทำการนับแถว
+$count = mysqli_num_rows($result);
 
 ?>
 
@@ -29,6 +31,8 @@ $result = mysqli_query($con, $sql);
     <h1 class="text-center">ข้อมูลพนักงานในฐานข้อมูล</h1>
     <!-- 27/1 สร้างเส้นคั่น -->
     <hr>
+    <!-- ทำการตรวจเช็คว่า $count มีมากกว่า 0 รึป่าว -->
+    <?php if($count>0) { ?>
     <!-- 27/2 สร้างฟอร์ม -->
     <form action="deleteTextField.php" class="form-group" method="POST">
         <!-- 27/3 จะให้ป้อนรหัสพนักงานเพื่อทำการลบ -->
@@ -74,6 +78,11 @@ $result = mysqli_query($con, $sql);
         <?php } ?>
         </tbody>
     </table>
+    <?php } else { ?>
+    <div class="alert alert-danger">
+        ไม่มีข้อมูลพนักงาน
+    </div>
+    <?php }?>
     <a href="insertForm.php" class="btn btn-success">บันทึกข้อมูล</a>
     </div>
 

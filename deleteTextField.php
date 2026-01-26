@@ -18,8 +18,10 @@ $result = mysqli_query($con,$sql);
 
 // 27/9 เช็คเงื่อนไข
 if($result){
-    echo "ลบข้อมูลเรียบร้อย <br>";
-    echo "<a href='index.php'>กลับไปหน้าแรก</a>";
+    //ระบุการส่งข้อมูลแล้วให้กลับไปในหน้าไหน
+    header("location:index.php");
+    //และให้สิ้นสุดการทำงานของตัวโปรแกรม
+    exit(0);
 }else{
     echo "เกิดข้อผิดพลาด";
 }

@@ -27,7 +27,10 @@ $result = mysqli_query($con,$sql); //คำสั่งรัน sql
 
 //การตรวจเช็คผลลัพธ์ sql ว่าทำงานได้จริงไหม
 if($result){
-    echo "บันทึกข้อมูลเรียบร้อย";
+    //ระบุการส่งข้อมูลแล้วให้กลับไปในหน้าไหน
+    header("location:index.php");
+    //และให้สิ้นสุดการทำงานของตัวโปรแกรม
+    exit(0);
 }else{
     echo mysqli_error($con);
 }

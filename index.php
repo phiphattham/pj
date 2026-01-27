@@ -2,7 +2,7 @@
 // 8 ชื่อต่อกับฐานข้อมูล
 require('dbconnect.php');
 
-$sql = "SELECT * FROM employees";
+$sql = "SELECT * FROM employees ORDER BY emp_fname ASC";
 //  คำสั่ง sql ในการทำงานก็จะทำงานดึงข้อมูลมาทั้งหมดเลย
 // อยู่ที่ว่าจะสอบถามข้อมูลแบบใดเลือกแบบที่ต้องการ
 
@@ -12,6 +12,8 @@ $result = mysqli_query($con, $sql);
 // ทำการสร้างตัวแปรทำการนับแถว
 $count = mysqli_num_rows($result);
 
+// การกำหนดตัวแปรทำลำดับที่
+$order = 1;
 ?>
 
 
@@ -52,7 +54,7 @@ $count = mysqli_num_rows($result);
                     <!-- 3 สร้างเป็นรูปแบบแถว -->
                     <tr>
                         <!-- 4 หัว column หรือหัวตาราง -->
-                        <th>รหัสพนักงาน</th>
+                        <th>ลำดับที่</th>
                         <th>ชื่อ</th>
                         <th>นามสกุล</th>
                         <th>เพศ</th>
@@ -67,7 +69,7 @@ $count = mysqli_num_rows($result);
                         <!-- 7 ทำการสร้างแถวใหม่ขึ้นมา -->
                         <tr>
                             <!-- 8 โดยใส่อ้างให้ตรงตาม column -->
-                            <td> <?php echo $row["emp_id"]; ?> </td>
+                            <td> <?php echo $order++ ; ?> </td>
                             <td> <?php echo $row["emp_fname"]; ?> </td>
                             <td> <?php echo $row["emp_lname"]; ?> </td>
                             <td>

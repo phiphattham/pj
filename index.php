@@ -66,7 +66,18 @@ $count = mysqli_num_rows($result);
                 <td> <?php echo $row["emp_id"] ;?> </td>
                 <td> <?php echo $row["emp_fname"] ;?> </td>
                 <td> <?php echo $row["emp_lname"] ;?> </td>
-                <td> <?php echo $row["emp_gender"] ;?> </td>
+                <td>
+                <?php
+                // ถ้า row emp_gender มีค่าเท่ากับ male จะให้แสดงผลเป็นชาย 
+                // ถ้า row emp_gender มีค่าเท่ากับ female จะให้แสดงผลเป็นหญิง
+                if($row["emp_gender"] == "male") { ?>
+                    ชาย
+                <?php } elseif($row["emp_gender"] == "female") { ?>
+                    หญิง
+                <?php } else { ?>
+                    อื่นๆ
+                <?php } ?>
+                </td>
                 <td> <?php echo $row["emp_skills"] ;?> </td>
                 <td>
                     <!-- 27/11 สร้างปุ่ม -->

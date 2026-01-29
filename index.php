@@ -69,7 +69,7 @@ $order = 1;
                         <!-- 7 ทำการสร้างแถวใหม่ขึ้นมา -->
                         <tr>
                             <!-- 8 โดยใส่อ้างให้ตรงตาม column -->
-                            <td> <?php echo $order++ ; ?> </td>
+                            <td> <?php echo $order++; ?> </td>
                             <td> <?php echo $row["emp_fname"]; ?> </td>
                             <td> <?php echo $row["emp_lname"]; ?> </td>
                             <td>
@@ -107,6 +107,10 @@ $order = 1;
         <a href="insertForm.php" class="btn btn-success">บันทึกข้อมูล</a>
         <?php if ($count > 0) { ?>
             <input type="submit" value="ลบข้อมูล (Checkbox)" class="btn btn-danger">
+            <!-- สร้างปุ่มเลือกทั้งหมด -->
+            <button class="btn btn-primary" onclick="checkAll()">เลือกทั้งหมด</button>
+            <!-- สร้างปุ่มยกเลิกทั้งหมด -->
+            <button class="btn btn-warning" onclick="uncheckAll()">ยกเลิก</button>
         <?php } ?>
         </form>
     </div>
@@ -115,5 +119,24 @@ $order = 1;
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
 
 </body>
+
+<!-- สร้างตัวฟังก์ชั่น -->
+<script>
+    function checkAll() {
+        var formelement = document.forms[1].length;
+        //ทำการลบไป 1 ค่า
+        for (i = 0; i < formelement - 1; i++) {
+            document.forms[1].elements[i].checked = true;
+        }
+    }
+    function uncheckAll() {
+        var formelement = document.forms[1].length;
+        //ทำการลบไป 1 ค่า
+        for (i = 0; i < formelement - 1; i++) {
+            document.forms[1].elements[i].checked = false;
+        }
+    }
+</script>
+
 
 </html>

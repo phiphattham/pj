@@ -59,6 +59,7 @@ $order = 1;
                         <th>นามสกุล</th>
                         <th>เพศ</th>
                         <th>ทักษะความสามาร</th>
+                        <th>แก้ไข้ข้อมูล</th> <!-- แก้ไขข้อมูล -->
                         <th>ลบข้อมูล</th> <!-- 27/10 เพิ่มหัวข้อ-->
                         <th>ลบข้อมูล (Checkbox)</th> <!-- เพิ่มหัวตาราง -->
                     </tr>
@@ -85,6 +86,9 @@ $order = 1;
                                 <?php } ?>
                             </td>
                             <td> <?php echo $row["emp_skills"]; ?> </td>
+                            <td>
+                                <a href="editForm.php?emp_id=<?php echo $row["emp_id"] ?>" class="btn btn-warning">แก้ไข้</a>
+                            </td>
                             <td>
                                 <!-- 27/11 สร้างปุ่ม -->
                                 <a href="deleteQueryString.php?emp_id=<?php echo $row["emp_id"] ?>" class="btn btn-danger"

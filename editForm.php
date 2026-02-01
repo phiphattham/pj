@@ -56,9 +56,21 @@ $row = mysqli_fetch_assoc($result);
             <!-- 10 ทำการสร้างฟอร์มเพื่อทำการเก็บค่าเพศ -->
             <div class="form-group">
                 <label for="gender">เพศ</label>
-                <input type="radio" name="emp_gender" value="male">ชาย
-                <input type="radio" name="emp_gender" value="female">หญิง
-                <input type="radio" name="emp_gender" value="other">อื่นๆ
+                <?php 
+                    if($row["emp_gender"] == "male"){
+                        echo "<input type='radio' name='emp_gender' value='male' checked>ชาย";
+                        echo "<input type='radio' name='emp_gender' value='female'>หญิง";
+                        echo "<input type='radio' name='emp_gender' value='other'>อื่นๆ";
+                    }elseif($row["emp_gender"] == "female"){
+                        echo "<input type='radio' name='emp_gender' value='male'>ชาย";
+                        echo "<input type='radio' name='emp_gender' value='female' checked>หญิง";
+                        echo "<input type='radio' name='emp_gender' value='other'>อื่นๆ";
+                    }else{
+                        echo "<input type='radio' name='emp_gender' value='male'>ชาย";
+                        echo "<input type='radio' name='emp_gender' value='female'>หญิง";
+                        echo "<input type='radio' name='emp_gender' value='other' checked>อื่นๆ";
+                    }          
+                ?>
             </div>
             <!-- 11 -->
             <div class="form-group">

@@ -17,7 +17,11 @@ $row = mysqli_fetch_assoc($result);
 //แสดงข้อมูล
 // print_r($row);
 
+// ตัวแปรที่มีฟังก์ชั่นเป็น array
+$emp_skills_arr = array("Java","PHP","Python","HTML"); // การเตรียมตัวเลือก 4 ตัวเลือก
 
+// ทดสอบการแสดงผล => ทำการแปร string ให้เป็น array
+// echo $row["emp_skills"];
 
 
 ?>
@@ -76,10 +80,21 @@ $row = mysqli_fetch_assoc($result);
             <div class="form-group">
                 <label for="">ทักษะ / ความสามารถ</label>
                                          <!-- skill จะระบุเป็น Array อาจมีหลายความสามารถ -->
-                <input type="checkbox" name="emp_skills[]" value="Java">Java
-                <input type="checkbox" name="emp_skills[]" value="PHP">PHP
-                <input type="checkbox" name="emp_skills[]" value="Python">Python
-                <input type="checkbox" name="emp_skills[]" value="HTML">HTML
+                <?php
+                //แปรค่าจาก string ให้กลับมาเป็นในรูปแบบ array
+                $emp_skills = explode(",",$row["emp_skills"]); // ไปดึงข้อมูลมาจากฐานข้อมูล ก็คือ column emp_skills ดึงไปเก็บที่ตัวแปรตัวแปร $emp_skills
+                
+                // foreach คือการลูปรูปแบบ array
+                // ส่วนของลูปตัวนี้ก็จะทำการสร้างตัวเลือกตามจำนวนสมาชิกที่อยู่ใน emp_skills_arr
+                foreach($emp_skills_arr as $value){
+                    if (in_array($value,$emp_skills)){
+                        echo "<input type='checkbox' name='emp_skills[]' value='$value' checked> $value";
+                    }else{
+                        echo "<input type='checkbox' name='emp_skills[]' value='$value'> $value";
+                    }
+                }   
+                ?>
+                
             </div>
             <!-- 5 -->
             <input type="submit" value="อัปเดตข้อมูล" class="btn btn-success my-2">

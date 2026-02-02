@@ -46,8 +46,8 @@ $emp_skills_arr = array("Java","PHP","Python","HTML"); // การเตรี�
         <!-- 1 -->
         <h2 class="text-center">แบบฟอร์มแก้ไขข้อมูล</h2> <!--ถ้าอยากให้ข้อมูลตัวนี้อยู่ตรงกลางก็ใส่คลาสให้เขา โดยใช้ text-center-->
         <!-- 3 --> <!--6-->
-        <form action="insertData.php" method="post">
-            
+        <form action="updateData.php" method="post">
+            <input type="hidden" value="<?php echo $row["emp_id"]; ?>" name="emp_id" id="">
             <!-- 4 --> <!--8 ทำการกรุ๊ปฟอร์มใน class div-->
             <div class="form-group">
                 <label for="firstname">ชื่อ</label>
